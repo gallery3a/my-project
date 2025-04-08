@@ -1,0 +1,121 @@
+/* تأكد من أن المسافة بين النصوص تكون مريحة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url('background.jpg');
+    background-size: cover;  /* تجعل الصورة تغطي كامل الشاشة */
+    background-position: center center;  /* توسيط الصورة في الصفحة */
+    background-attachment: fixed;  /* تجعل الصورة ثابتة عند التمرير */
+    background-repeat: no-repeat;  /* إلغاء تكرار الصورة */
+}
+
+/* تنسيق الشريط العلوي */
+.nav {
+    background-color: #6f1616;
+    color: white;
+    padding: 15px 0;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* نفس العرض الذي تم استخدامه في الكود الثاني */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav h3 {
+    font-size: 30px;
+    margin: 0;
+}
+/* تنسيق الرابط "Mazaqat" ليظهر كزر */
+.nav .logo {
+    text-decoration: none; /* إزالة التحديد */
+    background-color: #6f1616; /* لون الخلفية */
+    padding: 10px 20px; /* المسافة حول النص */
+    border-radius: 30px; /* الزوايا المدورة */
+    transition: background-color 0.3s ease; /* تأثير عند التمرير */
+}
+
+.nav .logo h3 {
+    font-size: 30px;
+    color: white;
+    margin: 0;
+}
+
+.nav .logo:hover {
+    background-color: #d75959; /* اللون عند التمرير */
+}
+
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;  /* لضمان أن الروابط تكون على أقصى اليسار */
+    gap: 20px;  /* مسافة بين الروابط */
+}
+
+.nav-links li {
+    margin-left: 0;  /* إلغاء المسافة بين العناصر */
+}
+
+/* تأثير التحويم على الروابط */
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s ease;  /* إضافة تأثير التحويل على اللون */
+}
+
+/* تغيير اللون إلى الأحمر الفاتح عند التحويم */
+.nav-links li a:hover {
+    color: #f44336;  /* اللون الأحمر الفاتح */
+}
+
+/* تنسيق زر استكشاف الوصفات */
+.explore-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* يضع الزر في منتصف الصفحة عموديا */
+}
+
+.explore-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #6f1616; /* اللون الاحمر */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #d75959; /* تغيير اللون عند التحويم */
+}
+
+/* تنسيق تذييل الصفحة */
+footer {
+    background-color: #780303;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* تنسيق الصورة الخلفية */
+img {
+    width: 100%;
+    height: auto;
+}

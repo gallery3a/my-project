@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <h1>Edit Recipe</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ recipe[1] }}" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required>{{ recipe[2] }}</textarea>
+        <br>
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="ingredients" required>{{ recipe[3] }}</textarea>
+        <br>
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions" name="instructions" required>{{ recipe[4] }}</textarea>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="/admin">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+    <a href="/add_recipe" class="add-btn">Add New Recipe</a>
+    
+    <h2>Recipes</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe[0] }}</td>
+            <td>{{ recipe[1] }}</td>
+            <td>{{ recipe[2] }}</td>
+            <td>
+                <a href="/edit_recipe/{{ recipe[0] }}" class="edit-btn">Edit</a>
+                <a href="/delete_recipe/{{ recipe[0] }}" class="delete-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/logout" class="logout-btn">Logout</a>
+</body>
+</html>

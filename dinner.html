@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وصفات العشاء</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* تطبيق الخط العربي على جميع النصوص */
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* التأكد من حساب المسافات بشكل صحيح */
+        }
+
+        /* تنسيق الشريط العلوي */
+        .nav {
+            background-color: #6f1616;
+            color: white;
+            padding: 9px 0;
+        }
+        
+        /* إضافة تنسيق لخانة البحث */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .search-container input {
+            padding: 18px;
+            width: 500px;
+            border: 1px solid #ee4343;
+            border-radius: 40px;
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* تمكين الوضع النسبي للـ pagination داخل الشريط العلوي */
+        }
+
+        .nav .logo h3 {
+            color: white;
+            margin: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        body, html {
+            height: 100%; /* التأكد من أن صفحة HTML تأخذ كامل ارتفاع الشاشة */
+            margin: 0;
+        }
+
+         /* تنسيق الأزرار (العودة والتقدم) */
+        .pagination {
+            position: absolute;
+            left: -300px; /* الأزرار تظهر في الجهة اليسرى */
+            top: 30%;
+            transform: translateY(-50%);
+            font-size: 48px;
+            color: white;
+            cursor: pointer;
+        }
+.pagination a {
+    text-decoration: none;
+    color: white;
+    background-color: #6f1616; /* Add a visible background color */
+    padding: 10px 30px;
+    border-radius: 60px;
+    font-size: 33px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #e90000; /* Change background color on hover */
+}
+
+        /* إضافة تنسيق لخانة البحث */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .search-container input {
+            padding: 18px;
+            width: 500px;
+            border: 1px solid #ee4343;
+            border-radius: 40px;
+        }
+
+        /* تنسيق وصفات العشاء */
+        .recipe-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .recipe-card {
+            background-color: #f9f9f972;
+            border: 1px solid #fbfbfb;
+            padding: 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* تأثير البوكس شادو الشفاف */
+        }
+
+        .recipe-card h3 {
+            color: #6f1616;
+            margin-top: 0;
+        }
+
+        .recipe-card p {
+            color: #333;
+        }
+
+        .ingredients {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .explore-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .explore-button {
+            padding: 20px 35px;
+            font-size: 28px;
+            cursor: pointer;
+            background-color: #6f1616;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-button:hover {
+            background-color: #d75959;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #760606;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+
+    <!-- Page-specific content -->
+    <div class="recipe-container">
+        <h1>وصفات العشاء</h1>
+        <!-- Dinner recipes will go here -->
+    </div>
+
+    <footer></footer>
+
+    <script src="template.js"></script>
+    
+    <!-- الشريط العلوي -->
+    <nav class="nav">
+        <div class="container">
+            <a href="homepage.html" class="logo">
+                <h3>Mazaqat</h3>
+            </a>
+            <ul class="nav-links">
+                <li><a href="homepage.html">الرئيسية</a></li>
+                <li><a href="serv.html">الخدمات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="search-container">
+                <form action="#" method="GET">
+                    <input type="text" placeholder="ابحث عن وصفات...">
+                </form>
+            </div>
+            
+            <div class="pagination">
+                <a href="javascript:history.back()" class="previous">&lt;</a>
+                <a href="javascript:history.forward()" class="next">&gt;</a>
+            </div>
+            
+        </div>
+    </nav>
+
+    <!-- عرض وصفات العشاء -->
+    <div class="recipe-container">
+        <div class="recipe-card">
+            <h3> سلطة الدجاج المشوي</h3>
+            <p>سلطة صحية ولذيذة تحتوي على الدجاج المشوي والخضروات الطازجة.</p>
+            <p class="ingredients">المقادير: دجاج مشوي, خس, طماطم, خيار, زيت زيتون, عصير ليمون</p>
+        </div>
+        <div class="recipe-card">
+            <h3> شوربة الخضار</h3>
+            <p>شوربة خفيفة وصحية تحتوي على مزيج من الخضروات الموسمية.</p>
+            <p class="ingredients">المقادير: جزر, كرفس, بطاطس, كوسا, مرق خضروات</p>
+        </div>
+        <div class="recipe-card">
+            <h3> سمك مشوي بالأعشاب</h3>
+            <p>سمك مشوي مع التوابل الطازجة مثل الأعشاب والليمون.</p>
+            <p class="ingredients">المقادير: سمك, أعشاب طازجة, ليمون, زيت زيتون, ملح, فلفل</p>
+        </div>
+        <div class="recipe-card">
+            <h3> سلطة الكينوا</h3>
+            <p>سلطة غنية بالبروتين من الكينوا والخضروات الطازجة مع صوص خفيف.</p>
+            <p class="ingredients">المقادير: كينوا, خيار, طماطم, فلفل رومي, زيت زيتون, عصير ليمون</p>
+        </div>
+        <div class="recipe-card">
+            <h3> سلطة الفواكه</h3>
+            <p>مزيج من الفواكه الطازجة مع عسل ونعناع.</p>
+            <p class="ingredients">المقادير: فراولة, موز, تفاح, عنب, عسل, نعناع</p>
+        </div>
+        <div class="recipe-card">
+            <h3> شرائح الدجاج مع الخضروات المشوية</h3>
+            <p>دجاج مشوي يقدم مع الخضروات المشوية مثل الكوسا والجزر.</p>
+            <p class="ingredients">المقادير: دجاج, كوسا, جزر, زيت زيتون, أعشاب</p>
+        </div>
+        <div class="recipe-card">
+            <h3> ستيك اللحم المشوي مع سلطة</h3>
+            <p>ستيك لحم مشوي يقدم مع سلطة خضراء خفيفة.</p>
+            <p class="ingredients">المقادير: لحم ستيك, خس, طماطم, خيار, زيت زيتون</p>
+        </div>
+        <div class="recipe-card">
+            <h3> طاجن الخضار</h3>
+            <p>طاجن مغربي يحتوي على الخضروات المتنوعة مع التوابل العطرية.</p>
+            <p class="ingredients">المقادير: جزر, كوسا, بطاطس, طماطم, بهارات مغربية</p>
+        </div>
+        <div class="recipe-card">
+            <h3> توست الأفوكادو</h3>
+            <p>توست مكون من الأفوكادو مع الطماطم وبيضة مسلوقة، وجبة خفيفة وصحية.</p>
+            <p class="ingredients">المقادير: خبز توست, أفوكادو, طماطم, بيضة</p>
+        </div>
+        <div class="recipe-card">
+            <h3> شاورما الدجاج مع الحمص</h3>
+            <p>شاورما دجاج مع الحمص وصلصة الطحينة، وجبة خفيفة وغنية بالبروتين.</p>
+            <p class="ingredients">المقادير: دجاج, حمص, طحينة, ثوم, ليمون</p>
+        </div>
+        <div class="recipe-card">
+            <h3> شوربة العدس</h3>
+            <p>شوربة عدس دافئة، مغذية وخفيفة على المعدة.</p>
+            <p class="ingredients">المقادير: عدس, جزر, بصل, مرق خضروات</p>
+        </div>
+        <div class="recipe-card">
+            <h3> شرائح الدجاج مع صوص الليمون والعسل</h3>
+            <p>دجاج مشوي مع صوص الليمون والعسل، يقدم مع الخضروات الطازجة.</p>
+            <p class="ingredients">المقادير: دجاج, ليمون, عسل, زيت زيتون, خضروات</p>
+        </div>
+        
+        <!-- إضافة 12 وجبة جديدة -->
+        <div class="recipe-card">
+            <h3> كباب الدجاج المشوي</h3>
+            <p>كباب دجاج مشوي مع التوابل العربية يقدم مع الخبز المشوي.</p>
+            <p class="ingredients">المقادير: دجاج, توابل عربية, خبز</p>
+        </div>
+        <div class="recipe-card">
+            <h3> سلطة الجرجير مع الجبن</h3>
+            <p>سلطة جرجير منعشة مع جبن الفيتا والصوص البلسمي.</p>
+            <p class="ingredients">المقادير: جرجير, جبن فيتا, صوص بلسمي</p>
+        </div>
+        <div class="recipe-card">
+            <h3> فاهيتا الدجاج</h3>
+            <p>دجاج مشوي مع فلفل حلو والبصل، يقدم مع التورتيلا.</p>
+            <p class="ingredients">المقادير: دجاج, فلفل, بصل, تورتيلا</p>
+        </div>
+        <div class="recipe-card">
+            <h3> طبق السوشي</h3>
+            <p>سوشي صحي يحتوي على الأرز، الأسماك الطازجة، والخضروات.</p>
+            <p class="ingredients">المقادير: أرز سوشي, سمك طازج, خضروات</p>
+        </div>
+        <div class="recipe-card">
+            <h3> شوربة الطماطم</h3>
+            <p>شوربة طماطم دافئة بنكهة الأعشاب.</p>
+            <p class="ingredients">المقادير: طماطم, بصل, أعشاب, مرق خضروات</p>
+        </div>
+        <div class="recipe-card">
+            <h3> سلطة الحمص</h3>
+            <p>حمص مهروس مع زيت الزيتون والليمون، يقدم مع الخبز المحمص.</p>
+            <p class="ingredients">المقادير: حمص, زيت زيتون, ليمون, خبز</p>
+        </div>
+        <div class="recipe-card">
+            <h3> تشيكن ستير فراي</h3>
+            <p>دجاج مع الخضروات المشوية وصلصة الصويا.</p>
+            <p class="ingredients">المقادير: دجاج, خضروات, صلصة صويا</p>
+        </div>
+        <div class="recipe-card">
+            <h3> ستيك سمك السلمون</h3>
+            <p>سمك سلمون مشوي مع صوص الليمون والزبدة.</p>
+            <p class="ingredients">المقادير: سمك سلمون, ليمون, زبدة</p>
+        </div>
+        <div class="recipe-card">
+            <h3> طاجن الدجاج بالمشمش</h3>
+            <p>دجاج مطهو مع المشمش والتوابل الشرقية.</p>
+            <p class="ingredients">المقادير: دجاج, مشمش, بهارات</p>
+        </div>
+        <div class="recipe-card">
+            <h3> شاورما لحم الغنم</h3>
+            <p>شاورما لحم الغنم مع التوابل الخاصة، يقدم مع الطحينة.</p>
+            <p class="ingredients">المقادير: لحم غنم, طحينة, توابل خاصة</p>
+        </div>
+        <div class="recipe-card">
+            <h3> برجر الخضروات</h3>
+            <p>برجر خضروات مع الحبوب الكاملة والصلصات الصحية.</p>
+            <p class="ingredients">المقادير: خضروات, حبوب, صلصات صحية</p>
+        </div>
+        <div class="recipe-card">
+            <h3> سلطة التبولة</h3>
+            <p>تبولة صحية تحتوي على البرغل والخضروات الطازجة.</p>
+            <p class="ingredients">المقادير: برغل, بقدونس, طماطم, خيار</p>
+        </div>
+    </div>
+
+    <!-- زر استكشاف الوصفات -->
+    <div class="explore-button-container">
+        <a href="mazaqat.html">
+        </a>
+    </div>
+<!-- Add backward and forward buttons with the new design -->
+    
+    <!-- تذييل الصفحة -->
+    <footer id="contact">
+        <p>© 2025 جميع الحقوق محفوظة. اتصل بنا عبر البريد الإلكتروني: example@email.com</p>
+    </footer>
+    <script>
+        // Select the search bar and recipe cards
+        const searchBar = document.querySelector('.search-container input');
+        const recipeCards = document.querySelectorAll('.recipe-card');
+    
+        // Create a "No Results" message
+        const noResultsMessage = document.createElement('p');
+        noResultsMessage.textContent = 'لا يوجد وصفه بهذا الاسم';
+        noResultsMessage.style.textAlign = 'center';
+        noResultsMessage.style.color = 'red';
+        noResultsMessage.style.fontSize = '20px';
+        noResultsMessage.style.display = 'none';
+        document.querySelector('.recipe-container').appendChild(noResultsMessage);
+    
+        // Add event listener for the search bar
+        searchBar.addEventListener('input', function () {
+            const searchTerm = searchBar.value.toLowerCase().trim();
+            let hasResults = false;
+    
+            // Loop through all recipe cards
+            recipeCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block'; // Show matching recipes
+                    hasResults = true;
+                } else {
+                    card.style.display = 'none'; // Hide non-matching recipes
+                }
+            });
+    
+            // Show or hide the "No Results" message
+            if (searchTerm === '') {
+                recipeCards.forEach(card => card.style.display = 'block'); // Show all recipes
+                noResultsMessage.style.display = 'none';
+            } else if (!hasResults) {
+                noResultsMessage.style.display = 'block';
+            } else {
+                noResultsMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+

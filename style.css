@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url('BG.jpg'); /* الصورة الخلفية */
+    background-size: cover;  /* تجعل الصورة تغطي كامل الشاشة */
+    background-position: center center;  /* توسيط الصورة في الصفحة */
+    background-attachment: fixed;  /* تجعل الصورة ثابتة عند التمرير */
+    background-repeat: no-repeat;  /* إلغاء تكرار الصورة */
+}
+
+/* تنسيق الشريط العلوي */
+.nav {
+    background-color: #6f1616;
+    color: white;
+    padding: 15px 0;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* نفس العرض الذي تم استخدامه في الكود الثاني */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav h3 {
+    font-size: 30px;
+    margin: 0;
+}
+
+/* تنسيق الرابط "Mazaqat" ليظهر كزر */
+.nav .logo {
+    text-decoration: none; /* إزالة التحديد */
+    background-color: #6f1616; /* لون الخلفية */
+    padding: 10px 20px; /* المسافة حول النص */
+    border-radius: 30px; /* الزوايا المدورة */
+    transition: background-color 0.3s ease; /* تأثير عند التمرير */
+}
+
+.nav .logo h3 {
+    font-size: 30px;
+    color: white;
+    margin: 0;
+}
+
+.nav .logo:hover {
+    background-color: #b05959; /* اللون عند التمرير */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;  /* لضمان أن الروابط تكون على أقصى اليسار */
+    gap: 20px;  /* مسافة بين الروابط */
+}
+
+.nav-links li {
+    margin-left: 0;  /* إلغاء المسافة بين العناصر */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s ease;  /* إضافة تأثير التحويل على اللون */
+}
+
+.nav-links li a:hover {
+    color: #f44336;  /* اللون الأحمر الفاتح */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* يجعل خانة البحث تشغل المساحة المتبقية */
+}
+
+
+/* محتوى الصفحة */
+.services {
+    max-width: 1200px; /* زيادة العرض لكي يتناسب مع العناصر بجانب بعضها */
+    margin: 100px auto;
+    padding: 0 30px;
+    text-align: center;
+    flex: 1;  /* هذا يضمن أن المحتوى سيأخذ المساحة المتاحة */
+}
+
+.services h1 {
+    background-color: rgb(91, 19, 7);
+    font-size: 60px;
+    margin-bottom: 20px; /* زيادة المسافة */
+    color: #fcf7f7;
+    box-shadow: 0 4px 8px rgba(226, 5, 5, 5);
+}
+
+/* تنسيق عناصر الخدمة */
+.service-items {
+    display: flex; /* استخدام flexbox */
+    flex-wrap: wrap; /* يسمح للعناصر بالتفاف إذا كانت ضيقة */
+    justify-content: space-around; /* توزيع العناصر بشكل متساوي */
+    gap: 20px; /* المسافة بين العناصر */
+}
+
+.service-item {
+    background-color: rgb(147, 68, 68);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(226, 5, 5, 0.5);
+    transition: transform 0.3s ease-in-out;
+    flex: 1 1 300px; /* كل عنصر سيكون له عرض أساسي 300 بكسل */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fcf7f7;
+}
+
+.service-item p {
+    font-size: 18px;
+    color: #f4eded;
+    line-height: 1.8;
+}
+
+/* تنسيق تذييل الصفحة */
+footer {
+    background-color: #780303;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;  /* لتوفير مسافة بين المحتوى والتذييل */
+    flex-shrink: 0;  /* لضمان بقاء التذييل في الأسفل */
+}
+
+footer p {
+    font-size: 16px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
