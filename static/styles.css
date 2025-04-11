@@ -83,15 +83,6 @@ a:hover {
     background-color: #5a6268;
 }
 
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
 /* Page Header */
 h1 {
     text-align: center;
@@ -128,7 +119,6 @@ form input, form textarea {
     box-sizing: border-box;
 }
 
-
 /* Form Button */
 form button {
     display: block;
@@ -163,4 +153,109 @@ a {
 
 a:hover {
     background-color: #5a6268;
+}
+
+/* Table styling */
+table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header styling */
+h1, h2 {
+    color: #007BFF;
+}
+
+/* Button styling */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Links styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Apply the same background to all pages */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f4f4f4; /* Fallback background color */
+    background-image: url('/static/BG.jpg'); /* Reference to the background image in the static folder */
+    background-size: cover;  /* Ensures it covers the whole page */
+    background-position: center center;  /* Keeps the background centered */
+    background-attachment: fixed;  /* Keeps the background fixed while scrolling */
 }

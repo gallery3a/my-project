@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category }} Recipes</title>
+</head>
+<body>
+    <h1>{{ category }} Recipes</h1>
+
+    <!-- Search Form -->
+    <form method="get" action="{{ url_for('show_category', category=category.lower()) }}">
+        <input type="text" name="query" value="{{ query }}" placeholder="Search recipes...">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Recipes List -->
+    <ul>
+        {% for recipe in recipes %}
+        <li>
+            <h2>{{ recipe[1] }}</h2> <!-- Name -->
+            <p><strong>Description:</strong> {{ recipe[2] }}</p> <!-- Description -->
+            <p><strong>Ingredients:</strong> {{ recipe[3] }}</p> <!-- Ingredients -->
+            <p><strong>Instructions:</strong> {{ recipe[4] }}</p> <!-- Instructions -->
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

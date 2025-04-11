@@ -1,0 +1,252 @@
+/* General Body Styling */
+body {
+    background-image: url('/static/BG.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Dropdown Menu Styling */
+.select {
+    width: fit-content;
+    cursor: pointer;
+    position: relative;
+    transition: 300ms;
+    color: white;
+    overflow: hidden;
+}
+
+.selected {
+    background-color: #2a2f3b;
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 100000;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    position: relative;
+    right: 0px;
+    height: 10px;
+    transform: rotate(-90deg);
+    width: 25px;
+    fill: white;
+    z-index: 100000;
+    transition: 300ms;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #2a2f3b;
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    transition: 300ms;
+}
+
+.select:hover > .options {
+    opacity: 1;
+    top: 0;
+}
+
+.select:hover > .selected .arrow {
+    transform: rotate(0deg);
+}
+
+.option {
+    border-radius: 5px;
+    padding: 5px;
+    transition: 300ms;
+    background-color: #2a2f3b;
+    width: 150px;
+    font-size: 15px;
+}
+
+.option:hover {
+    background-color: #323741;
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options label {
+    display: inline-block;
+}
+
+.options label::before {
+    content: attr(data-txt);
+}
+
+.options input[type="radio"]:checked + label {
+    display: none;
+}
+
+.options input[type="radio"]#all:checked + label {
+    display: none;
+}
+
+.select:has(.options input[type="radio"]#all:checked) .selected::before {
+    content: attr(data-default);
+}
+
+.select:has(.options input[type="radio"]#breakfast:checked) .selected::before {
+    content: attr(data-breakfast);
+}
+
+.select:has(.options input[type="radio"]#lunch:checked) .selected::before {
+    content: attr(data-lunch);
+}
+
+.select:has(.options input[type="radio"]#dinner:checked) .selected::before {
+    content: attr(data-dinner);
+}
+
+.select:has(.options input[type="radio"]#desserts:checked) .selected::before {
+    content: attr(data-desserts);
+}
+
+/* Navigation Bar Styling */
+.nav {
+    background-color: #6f1616;
+    color: white;
+    padding: 15px 0;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and the rest */
+    align-items: center; /* Align items vertically */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px; /* Add spacing between elements */
+}
+
+/* Logo Styling */
+.nav .logo {
+    text-decoration: none;
+    background-color: #6f1616;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.nav .logo h3 {
+    font-size: 30px;
+    color: white;
+    margin: 0;
+}
+
+.nav .logo:hover {
+    background-color: #d75959;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Align links vertically */
+    gap: 20px; /* Space between links */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f44336;
+}
+
+/* Align the dropdown menu and search bar in the header */
+.search-dropdown-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Space between the dropdown and search bar */
+    margin: 0; /* Remove any extra margin */
+    flex-grow: 1; /* Allow the search bar to take up remaining space */
+}
+
+/* Adjust the search bar to align with the dropdown menu */
+.search-container input {
+    height: 40px; /* Match the height of the dropdown menu */
+    padding: 10px;
+    border: 1px solid #ee4343;
+    border-radius: 40px;
+    width: 300px; /* Adjust width as needed */
+}
+
+/* Explore Button Styling */
+.explore-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Center the button vertically */
+}
+
+.explore-button {
+    padding: 40px 80px; /* Increase padding around the text */
+    font-size: 32px; /* Increase font size */
+    background-color: #6f1616; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #d75959; /* Change color on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #6f1616; /* Same color as the navigation bar */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Background Image Styling */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .nav .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 10px;
+    }
+
+    .search-dropdown-container {
+        flex-direction: column; /* Stack dropdown and search bar */
+        gap: 10px;
+        width: 100%; /* Take full width */
+    }
+
+    .search-container input {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

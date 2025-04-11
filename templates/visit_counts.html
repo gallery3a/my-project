@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عدد الزيارات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #6f1616, #010503); /* Updated modern gradient background */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6f1616;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .table-container {
+            margin-top: 40px;
+            overflow-x: auto;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #e1e4e8;
+        }
+
+        table th {
+            background-color: #6f1616;
+            color: white;
+            font-size: 16px;
+        }
+
+        table td {
+            background-color: #fafafa;
+            font-size: 14px;
+        }
+
+        table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover td {
+            background-color: #f1f1f1;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #6f1616;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px auto 0;
+            display: block;
+            width: 150px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #d75959;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>عدد الزيارات للصفحات</h1>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>الصفحة</th>
+                        <th>عدد الزيارات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for visit in visit_data %}
+                    <tr>
+                        <td>{{ visit[0] }}</td> <!-- Page Name -->
+                        <td>{{ visit[1] }}</td> <!-- Visit Count -->
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Back to Admin Button -->
+        <a href="/admin" class="back-btn">العودة إلى لوحة التحكم</a>
+    </div>
+
+</body>
+</html>

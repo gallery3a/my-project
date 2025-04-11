@@ -1,37 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>لوحة تحكم الإدارة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6f1616, #010503); /* Updated modern gradient background */
+            color: #333;
+        }
+
+        .admin-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent white background */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .admin-container h1 {
+            text-align: center;
+            color: #6f1616;
+            margin-bottom: 20px;
+        }
+
+        .admin-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .admin-container table th,
+        .admin-container table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .admin-container table th {
+            background-color: #6f1616;
+            color: white;
+        }
+
+        .admin-container a,
+        .admin-container button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #6f1616;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px 0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .admin-container a:hover,
+        .admin-container button:hover {
+            background-color: #d75959;
+        }
+
+        .add-recipe-btn {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .visit-count-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Admin Dashboard</h1>
+    <div class="admin-container">
+        <h1>لوحة تحكم الإدارة</h1>
 
-    <a href="/add_recipe" class="add-btn">Add New Recipe</a>
-    
-    <h2>Recipes</h2>
+        <!-- Add Recipe Button -->
+        <div class="add-recipe-btn">
+            <a href="/add_recipe">إضافة وصفة جديدة</a>
+        </div>
+
+        <!-- Button to redirect to visit counts page -->
+        <div class="visit-count-btn">
+            <a href="{{ url_for('visit_counts') }}">
+                <button>عرض عدد الزيارات</button>
+            </a>
+        </div>
+
+        <!-- Recipes Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>اسم الوصفة</th>
+                    <th>الوصف</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for recipe in recipes %}
+                <tr>
+                    <td>{{ recipe[1] }}</td> <!-- Recipe Name -->
+                    <td>{{ recipe[2] }}</td> <!-- Description -->
+                    <td>
+                        <a href="/edit_recipe/{{ recipe[0] }}">تعديل</a>
+                        <a href="/delete_recipe/{{ recipe[0] }}" onclick="return confirm('هل أنت متأكد من حذف هذه الوصفة؟')">حذف</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <h2>عدد زيارات الصفحات</h2>
     <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-        {% for recipe in recipes %}
-        <tr>
-            <td>{{ recipe[0] }}</td>
-            <td>{{ recipe[1] }}</td>
-            <td>{{ recipe[2] }}</td>
-            <td>
-                <a href="/edit_recipe/{{ recipe[0] }}" class="edit-btn">Edit</a>
-                <a href="/delete_recipe/{{ recipe[0] }}" class="delete-btn">Delete</a>
-            </td>
-        </tr>
-        {% endfor %}
+        <thead>
+            <tr>
+                <th>الصفحة</th>
+                <th>عدد الزيارات</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visit in visits %}
+            <tr>
+                <td>{{ visit[1] }}</td> <!-- Page Name -->
+                <td>{{ visit[2] }}</td> <!-- Visit Count -->
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
-    <a href="/logout" class="logout-btn">Logout</a>
 </body>
 </html>
